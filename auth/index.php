@@ -32,8 +32,8 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
     <link rel="stylesheet" href="https://unpkg.com/browse/normalize.css@8.0.1/normalize.css">
 
     <!-- <link rel="stylesheet" href="./css/styles.css"> -->
-    <link rel="stylesheet" href="./css/app.2973cecf.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/app.2973cecf.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body>
@@ -44,9 +44,9 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                 <div class="nav_list">
                     <div class="nav_content">
                         <div class="nav_logo">
-                            <a href="/">
+                            <a href="https://facesar.netlify.app">
                                 <div class="nav_logo_img">
-                                    <img class="nav_logo_image" src="./assets/img/logo.svg" alt="Logo App">
+                                    <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
                                 </div>
                             </a>
                         </div>
@@ -64,8 +64,8 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                                 </a>
                             </div>
                             <div class="nav_control">
-                                <a class="nav_control_link" href="/">
-                                    <img class="nav_control_icon" src="./assets/img/united.png" alt="Flag">
+                                <a class="nav_control_link" href="https://facesar.netlify.app">
+                                    <img class="nav_control_icon" src="../assets/img/united.png" alt="Flag">
                                     <span class="suntitle">Country</span>
                                 </a>
                             </div>
@@ -155,24 +155,24 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                         <div class="footer_nav_body_items">
                                 <div class="footer_nav_bb">
                                     <div class="nav_logo">
-                                        <a aria-current="page" href="/" class="router-link-active router-link-exact-active nav_logo_item">
+                                        <a aria-current="page" href="https://facesar.netlify.app" class="router-link-active router-link-exact-active nav_logo_item">
                                         <div class="nav_logo_img">
-                                            <img class="nav_logo_image" src="./assets/img/logo.svg" alt="Logo App">
+                                            <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
                                         </div>
                                         </a>
                                     </div>
                                 </div>
                             <div class="footer_nav_aa">
-                                <a href="/">Privacy policy</a>
-                                <a href="/">Terms &amp; Conditions</a>
+                                <a href="https://facesar.netlify.app">Privacy policy</a>
+                                <a href="https://facesar.netlify.app">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>
                     <div class="footer_nav_foot">
                         <div>
-                            <a href="/">Privacy policy</a>
-                            <a href="/">Terms &amp; Conditions</a>
-                            <a href="/">Copyright © 2021 SwissGap. All rights reserved.</a>
+                            <a href="https://facesar.netlify.app">Privacy policy</a>
+                            <a href="https://facesar.netlify.app">Terms &amp; Conditions</a>
+                            <a href="https://facesar.netlify.app">Copyright © 2021 SwissGap. All rights reserved.</a>
                         </div>
                     </div>
                 </div>
