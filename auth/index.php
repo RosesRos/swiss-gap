@@ -14,6 +14,10 @@ function test_input($data) {
 if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
     test_input($firstName);
     test_input($lastName);
+    header("Cache-Control: no-cache, max-age=0, must-revalidate, no-store");
+    // exit();
+} else {
+    die(header("Location: /"));   
 }
 
 $barFirstName = ucwords(strtolower($firstName));
