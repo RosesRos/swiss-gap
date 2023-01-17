@@ -4,12 +4,14 @@ const navControlIcon = document.getElementById("nav_control_icon");
 const Items = document.getElementById("section_modal_flags_body");
 const defImage = document.getElementsByClassName("section_form_input_flags");
 const modal = document.querySelector(".section_modal_flags");
+const checkbox = document.querySelectorAll("input[type='checkbox']");
+let inputs = document.querySelectorAll("input[class='section_form_input']");
+
 
 const modalOne = () => {
   const openModals = [...document.getElementsByClassName("openModal")];
   const Modal = document.querySelector(".section_modal");
   const accept = document.getElementById("accept");
-  const checkbox = document.querySelectorAll("input[type='checkbox']");
   
   openModals.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -60,7 +62,6 @@ const modalTwo = () => {
 }
 
 function validateInput() {
-  let inputs = document.querySelectorAll("input[class='section_form_input']");
 
   for (let inp = 0; inp < inputs.length; inp++) {
     inputs[inp].addEventListener("input", () => {
@@ -98,7 +99,18 @@ const Main = () => {
           }
         })
     } 
-}
+  }
+
+  window.onload = cleanInputs;
+
+  function cleanInputs() {
+    for (let inp = 0; inp < inputs.length; inp++) {
+      inputs[inp].value = "";
+    };
+    for (let chec = 0; chec < checkbox.length; chec++) {
+      checkbox[chec].checked = false;
+    };
+  };
 }
 
 
