@@ -5,7 +5,7 @@ $email = isset($_POST["email"]) ? $_POST["email"] : "";
 $phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
 
 function test_input($data) {
-    $data = trim($data);
+    $data = trim($data); 
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     $data = htmlentities($data, ENT_QUOTES);
