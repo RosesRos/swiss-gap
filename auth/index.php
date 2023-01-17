@@ -16,6 +16,9 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
     test_input($lastName);
 }
 
+$barFirstName = ucwords(strtolower($firstName));
+$barLastName = ucwords(strtolower($lastName));
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +47,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                 <div class="nav_list">
                     <div class="nav_content">
                         <div class="nav_logo">
-                            <a href="https://facesar.netlify.app">
+                            <a href="/">
                                 <div class="nav_logo_img">
                                     <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
                                 </div>
@@ -64,7 +67,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                                 </a>
                             </div>
                             <div class="nav_control">
-                                <a class="nav_control_link" href="https://facesar.netlify.app">
+                                <a class="nav_control_link" href="/">
                                     <img class="nav_control_icon" src="../assets/img/united.png" alt="Flag">
                                     <span class="suntitle">Country</span>
                                 </a>
@@ -84,7 +87,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                         <div class="section_success">
                             <div class="section_succe">
                                 <h1 class="section_succe_title">THANK YOU!</h1>
-                                <h3 class="section_succe_subtitle">Dear <?= $firstName . " " . $lastName?>, your account has been activated.</h3>
+                                <h3 class="section_succe_subtitle">Dear <?= $barFirstName . " " . $barLastName?>, your account has been activated.</h3>
                                 <p class="section_succe_text">Please wait and your representative <br> will contact you asap.</p>
                             </div>
                         </div>
@@ -155,7 +158,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                         <div class="footer_nav_body_items">
                                 <div class="footer_nav_bb">
                                     <div class="nav_logo">
-                                        <a aria-current="page" href="https://facesar.netlify.app" class="router-link-active router-link-exact-active nav_logo_item">
+                                        <a aria-current="page" href="/" class="router-link-active router-link-exact-active nav_logo_item">
                                         <div class="nav_logo_img">
                                             <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
                                         </div>
@@ -163,16 +166,16 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
                                     </div>
                                 </div>
                             <div class="footer_nav_aa">
-                                <a href="https://facesar.netlify.app">Privacy policy</a>
-                                <a href="https://facesar.netlify.app">Terms &amp; Conditions</a>
+                                <a href="/">Privacy policy</a>
+                                <a href="/">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>
                     <div class="footer_nav_foot">
                         <div>
-                            <a href="https://facesar.netlify.app">Privacy policy</a>
-                            <a href="https://facesar.netlify.app">Terms &amp; Conditions</a>
-                            <a href="https://facesar.netlify.app">Copyright © 2021 SwissGap. All rights reserved.</a>
+                            <a href="/">Privacy policy</a>
+                            <a href="/">Terms &amp; Conditions</a>
+                            <a href="/">Copyright © 2021 SwissGap. All rights reserved.</a>
                         </div>
                     </div>
                 </div>
