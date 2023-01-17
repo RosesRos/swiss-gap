@@ -11,9 +11,11 @@ function test_input($data) {
     $data = htmlentities($data, ENT_QUOTES);
 }
 
-if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName))) {
+if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName)) || (!empty($lastName)) || (!empty($email)) || (!empty($phone))) {
     test_input($firstName);
     test_input($lastName);
+    test_input($email);
+    test_input($phone);
     header("Cache-Control: no-cache, max-age=0, must-revalidate, no-store");
     // exit();
 } else {
