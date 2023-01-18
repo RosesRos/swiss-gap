@@ -1,32 +1,8 @@
-<?php 
-$firstName = isset($_POST["firstName"]) ? $_POST["firstName"] : "";
-$lastName = isset($_POST["lastName"]) ? $_POST["lastName"] : "";
-$email = isset($_POST["email"]) ? $_POST["email"] : "";
-$phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
 
-function test_input($data) {
-    $data = trim($data); 
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    $data = htmlentities($data, ENT_QUOTES);
-}
-
-if (($_SERVER["REQUEST_METHOD"] == "POST") || (!empty($firstName)) || (!empty($lastName)) || (!empty($email)) || (!empty($phone))) {
-    test_input($firstName);
-    test_input($lastName);
-    test_input($email);
-    test_input($phone);
-    header("Cache-Control: no-cache, max-age=0, must-revalidate, no-store");
-    // exit();
-} else {
-    die(header("Location: /"));   
-}
-
-$barFirstName = ucwords(strtolower($firstName));
-$barLastName = ucwords(strtolower($lastName));
-
+<?php
+$name = isset($request->name) ? $request->name : "User";
+$lowerName = ucwords(strtolower($name));
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,15 +10,15 @@ $barLastName = ucwords(strtolower($lastName));
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwissGap</title>
-    <link rel="icon" href="../logo.svg">
+    <link rel="icon" href="logo.svg">
 
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/browse/normalize.css@8.0.1/normalize.css">
 
     <!-- <link rel="stylesheet" href="./css/styles.css"> -->
-    <link rel="stylesheet" href="../css/app.2973cecf.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./css/app.2973cecf.css">
+    <link rel="stylesheet" href="./css/styles.css">
 
 </head>
 <body>
@@ -55,7 +31,7 @@ $barLastName = ucwords(strtolower($lastName));
                         <div class="nav_logo">
                             <a href="/">
                                 <div class="nav_logo_img">
-                                    <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
+                                    <img class="nav_logo_image" src="./assets/img/logo.svg" alt="Logo App">
                                 </div>
                             </a>
                         </div>
@@ -74,7 +50,7 @@ $barLastName = ucwords(strtolower($lastName));
                             </div>
                             <div class="nav_control">
                                 <a class="nav_control_link" href="/">
-                                    <img class="nav_control_icon" src="../assets/img/united.png" alt="Flag">
+                                    <img class="nav_control_icon" src="./assets/img/united.png" alt="Flag">
                                     <span class="suntitle">Country</span>
                                 </a>
                             </div>
@@ -92,9 +68,9 @@ $barLastName = ucwords(strtolower($lastName));
                     <div class="section_inner">
                         <div class="section_success">
                             <div class="section_succe">
-                                <h1 class="section_succe_title">THANK YOU!</h1>
-                                <h3 class="section_succe_subtitle">Dear <?= $barFirstName . " " . $barLastName?>, your account has been activated.</h3>
-                                <p class="section_succe_text">Please wait and your representative <br> will contact you asap.</p>
+                                <h1 class="section_succe_title">404</h1>
+                                <h1 class="section_succe_title">SORRY!</h1>
+                                <h3 class="section_succe_subtitle">Dear <?= $lowerName?>, This page is not found in your asap.</h3>
                             </div>
                         </div>
                     </div>
@@ -166,7 +142,7 @@ $barLastName = ucwords(strtolower($lastName));
                                     <div class="nav_logo">
                                         <a aria-current="page" href="/" class="router-link-active router-link-exact-active nav_logo_item">
                                         <div class="nav_logo_img">
-                                            <img class="nav_logo_image" src="../assets/img/logo.svg" alt="Logo App">
+                                            <img class="nav_logo_image" src="./assets/img/logo.svg" alt="Logo App">
                                         </div>
                                         </a>
                                     </div>

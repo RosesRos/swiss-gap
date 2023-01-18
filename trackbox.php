@@ -119,6 +119,8 @@ die();
 
 
 
+
+
 <?php
 
 // my set up api
@@ -189,5 +191,58 @@ if ($response['status'] === true) {
 // echo '<pre>';
 // print_r($autologinUrl);
 // echo '<pre>';
+
+?>
+
+
+
+
+<?php
+// my router - php
+
+$routes = [];
+
+function route(string $path, callable $callback) {
+    global $routes;
+    $routes[$path] = $callback;
+};
+
+function run_route() {
+    global $routes;
+    $uri = $_SERVER["REQUEST_URI"];
+    $found = false;
+
+    foreach($routes as $path => $callback) {
+        if ($path !== $uri) {
+            continue;
+        }
+
+        $found = true;
+        $callback();
+    };
+
+    if(!$found) {
+        $notFoundCallBack = $routes['/404'];
+        $notFoundCallBack();
+    };
+};
+
+route("/", function() {
+    require "./home.php";
+});
+
+route ("/login" , function() {
+    require "./login.php";
+});
+
+route("/one", function() {
+    require "./one.php";
+});
+
+route("/404", function() {
+    require "./404.php";
+});
+
+run_route();
 
 ?>
