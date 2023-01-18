@@ -1,4 +1,4 @@
-<form class="section_form" action="./auth/index.php" method="post">
+<form class="section_form" action="./auth" method="post">
   <h1 class="section_form_title">Registration</h1>
   <div class="section_form_items">
     <label class="section_form_label" for="firstName"><?= $first_name;?></label>
