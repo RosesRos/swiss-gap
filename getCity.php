@@ -1,6 +1,6 @@
 <?php
 
-$ip_address = $_SERVER['REMORE_ADDR'];
+$ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];;
 
 $url = "http://ip-api.com/json/{$ip_address}";
 
