@@ -28,7 +28,6 @@ print_r('your city' . ' ' . $city);
 
 <?php
                 $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-                // $ip_address = '196.196.53.84';
 
             ?>
             <script>
