@@ -61,3 +61,40 @@ print_r('your city' . ' ' . $city);
                 xhr.send(data);
 
             </script>
+
+<script>
+$(document).ready(function() {
+    var $city = $('.popup-geocity');
+    var city = '';
+    $.get('https://api.sypexgeo.net/json/', function(location) {
+        city = location.city.name_en;
+        $city.text(city);
+    })
+
+    let isShowedPopup = false;
+
+    $(document).mouseleave(function() {
+        if (!isShowedPopup) {
+            $('.popup-blackout').fadeIn();
+            isShowedPopup = true;
+        }
+    });
+
+    $('.popup-blackout').mouseup(function(e) {
+        let popup = $('.popup');
+        if (!popup.is(e.target) && popup.has(e.target).length === 0) {
+            $('.popup-blackout').fadeOut();
+        } else if ($('.popup-more-btn, .close-blackout').is(e.target)) {
+            e.preventDefault();
+            $('.popup-blackout').fadeOut();
+        }
+    });
+
+    $("a").on("touchend, click", function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+            scrollTop: $('.toscroll').offset().top
+        }, 400);
+    });
+});
+</script>
