@@ -98,3 +98,32 @@ $(document).ready(function() {
     });
 });
 </script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <p id="demo"></p>    
+
+    <script>
+        let demo = document.getElementById('demo');
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            var ip = data.ip;
+            // console.log(ip);
+            var IPs = [`${ip}`];
+            var endpoint = 'https://api.techniknews.net/ipgeo/';
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = JSON.parse(this.responseText);
+                    demo.innerHTML = response.city;
+                }
+            }
+            var data = JSON.stringify(IPs);
+            xhr.open('POST', endpoint,true);
+            xhr.send(data);
+        });
+    </script>
