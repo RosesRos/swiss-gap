@@ -17,7 +17,7 @@ $clickid    = isset($request->clickid) ? $request->clickid : $_COOKIE['_subid'];
  */
 class OrderApi
 {
-    const API_KEY = 'e7e21caa2068457aa4b1888015bc29ec';
+    const API_KEY = '';
     const API_URL = 'https://api-new.leadreaktor.com/api/order/create.php?';
 
     /**
