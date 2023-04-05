@@ -106,16 +106,16 @@ if ( $response->response->msg !== 'success' && $response->response->comment === 
 
 <!--PIXELS-->
 <?php
-    // echo '<script>script = document.getElementsByTagName("script");script[0].remove()</script>';
+    echo '<script>script = document.getElementsByTagName("script");script[0].remove()</script>';
 
-    // $pixels = explode(",", $pixels);
-    // echo "<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
-    // foreach($pixels as &$value) {
-    //     echo "fbq('init', '". trim($value) ."');";
-    // };
-    // echo  "fbq('track', 'PageView');";
-    // echo  "fbq('track', 'Lead');";
-	// echo "</script>";
+    $pixels = explode(",", $pixels);
+    echo "<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
+    foreach($pixels as &$value) {
+        echo "fbq('init', '". trim($value) ."');";
+    };
+    echo  "fbq('track', 'PageView');";
+    echo  "fbq('track', 'Lead');";
+	echo "</script>";
 ?>
 
 
