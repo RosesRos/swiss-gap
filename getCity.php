@@ -1,5 +1,6 @@
-<?php
 
+//Get ip only with PHP
+<?php
 $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];;
 
 $url = "http://ip-api.com/json/{$ip_address}";
@@ -21,47 +22,55 @@ curl_close($ch);
 
 $city = $data->city;
 print_r('your city' . ' ' . $city);
-
 ?>
 
 
 
+
+
+// get ip with PHP and JAVASCRIPT
+
 <?php
-                $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+?>
 
-            ?>
-            <script>
-                let ip = '<?= $ip_address ;?>'
+<script>
+    let ip = '<?= $ip_address ;?>'
 
-                let p = document.getElementById('loca');
+    let p = document.getElementById('loca');
 
-                var IPs = [`${ip}`];
+    var IPs = [`${ip}`];
 
-                // ip-api endpoint URL
-                // see http://ip-api.com/docs/api:batch for documentation
-                var endpoint = 'https://api.techniknews.net/ipgeo/';
+    // ip-api endpoint URL
+    // see http://ip-api.com/docs/api:batch for documentation
+    var endpoint = 'https://api.techniknews.net/ipgeo/';
 
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // Result array
-                        var response = JSON.parse(this.responseText);
-                        // console.log(response);
-                        p.innerHTML = response.city
-                        // response.forEach(function (item) {
-                        //     console.log(item.query + " is in " + item.city + ", " + item.country); 
-                        //     p.innerHTML = item.city
-                        // });
-                    }
-                };
-                var data = JSON.stringify(IPs);
-                // console.log("sending:", data);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Result array
+            var response = JSON.parse(this.responseText);
+            // console.log(response);
+            p.innerHTML = response.city
+            // response.forEach(function (item) {
+            //     console.log(item.query + " is in " + item.city + ", " + item.country); 
+            //     p.innerHTML = item.city
+            // });
+        }
+     };
+     var data = JSON.stringify(IPs);
+     // console.log("sending:", data);
 
-                xhr.open('POST', endpoint, true);
-                xhr.send(data);
+    xhr.open('POST', endpoint, true);
+    xhr.send(data);
 
-            </script>
+</script>
 
+
+
+
+
+// Get IP with jquery
 <script>
 $(document).ready(function() {
     var $city = $('.popup-geocity');
@@ -105,25 +114,25 @@ $(document).ready(function() {
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <p id="demo"></p>    
+<p id="demo"></p>    
 
-    <script>
-        let demo = document.getElementById('demo');
-        $.getJSON("https://api.ipify.org?format=json", function(data) {
-            var ip = data.ip;
-            // console.log(ip);
-            var IPs = [`${ip}`];
-            var endpoint = 'https://api.techniknews.net/ipgeo/';
+<script>
+    let demo = document.getElementById('demo');
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+        var ip = data.ip;
+        // console.log(ip);
+        var IPs = [`${ip}`];
+        var endpoint = 'https://api.techniknews.net/ipgeo/';
             
-            var xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var response = JSON.parse(this.responseText);
-                    demo.innerHTML = response.city;
-                }
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                demo.innerHTML = response.city;
             }
-            var data = JSON.stringify(IPs);
-            xhr.open('POST', endpoint,true);
-            xhr.send(data);
-        });
-    </script>
+        }
+        var data = JSON.stringify(IPs);
+        xhr.open('POST', endpoint,true);
+        xhr.send(data);
+    });
+</script>
