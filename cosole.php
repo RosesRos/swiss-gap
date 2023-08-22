@@ -1,3 +1,5 @@
+<?php
+
 function recordLog($file_name) { 
   $path = __DIR__."/".$file_name;
 
