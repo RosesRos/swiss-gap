@@ -6,6 +6,6 @@ this is a prototype for authoritation with:
 - JavaScript
 - Klein-PHP for route
 
-## Chechk [Demo](https://roses.lovestoblog.com/dist/)
+## Chechk [Demo](https://lure.lovestoblog.com/swiss-gap/)
 
 # Run composer install for packages "KLEIN"
