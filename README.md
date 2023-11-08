@@ -7,3 +7,5 @@ this is a prototype for authoritation with:
 - Klein-PHP for route
 
 ## Chechk [Demo](https://roses.lovestoblog.com/dist/)
+
+# Run composer install for packages "KLEIN"
